@@ -43,16 +43,16 @@ cacheSolve <- function(x, ...) {
     ##Check if there is a cached inversion
     inverseCache <- x$getInverse()
     
-        ##If there is a cached version, return the value
-        if(!is.null(inverseCahce)) {
-            message("Getting the cached data")
+        ##If there is a cached version, return it!
+        if(!is.null(inverseCache)) {
+            message("Getting cached data")
             return(inverseCache)
     }
     
     ##If there is no cached version, calculate new one
-    matrix <- x$getMatrix()
-        inverseCache <- solve(dataMatrix, ...)
+    data <- x$getMatrix()
+        inverseCache <- solve(data, ...)
     ##And set it into the cache    
-    x$setInverse(inverseMatrix)
-        inverseMatrix
+    x$setInverse(inverseCache)
+        inverseCache
 }
